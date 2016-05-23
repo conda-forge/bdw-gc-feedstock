@@ -5,7 +5,7 @@ Home: http://www.hboehm.info/gc/
 
 Package license: Custom
 
-Feedstock license: BSD
+Feedstock license: BSD 3-Clause
 
 Summary: Garbage collector for C and C++.
 
@@ -69,6 +69,7 @@ Terminology
 
 Current build status
 ====================
+
 Linux: [![Circle CI](https://circleci.com/gh/conda-forge/bdw-gc-feedstock.svg?style=svg)](https://circleci.com/gh/conda-forge/bdw-gc-feedstock)
 OSX: [![TravisCI](https://travis-ci.org/conda-forge/bdw-gc-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/bdw-gc-feedstock) 
 Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/bdw-gc-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/bdw-gc-feedstock/branch/master)
