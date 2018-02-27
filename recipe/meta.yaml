@@ -1,6 +1,6 @@
 {% set name = "bdw-gc" %}
 {% set version = "7.6.4" %}
-{% set sha256 = "b9f30bd5759e4282fdb161414a1b23845c63b725e8ed40fc110d0859a4396b81"%}
+{% set sha256 = "1f85bf6d4aaa3fb12fe0178b13d9685e2d0c3a4d115dea5f831c54deafa3f6db"%}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   fn: gc-{{ version }}.tar.gz
-  url: https://github.com/ivmai/bdwgc/releases/download/v{{ version }}/gc-{{ version }}.tar.gz
+  url: https://github.com/ivmai/bdwgc/archive/v{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
