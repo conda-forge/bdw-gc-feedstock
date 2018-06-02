@@ -1,6 +1,6 @@
 {% set name = "bdw-gc" %}
 {% set version = "7.6.4" %}
-{% set sha256 = "1f85bf6d4aaa3fb12fe0178b13d9685e2d0c3a4d115dea5f831c54deafa3f6db"%}
+{% set sha256 = "1f85bf6d4aaa3fb12fe0178b13d9685e2d0c3a4d115dea5f831c54deafa3f6db" %}
 
 package:
   name: {{ name|lower }}
@@ -12,16 +12,20 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 2
   skip: True  # [win]
+  run_exports:
+    - {{ pin_subpackage('bdw-gc') }}
 
 requirements:
   build:
-    - toolchain
+    - {{ compiler('cxx') }}
     - autoconf
     - automake
     - libtool
     - pkg-config
+  host:
+    # Uses the static library
     - libatomic_ops
 
 test:
@@ -37,4 +41,5 @@ about:
 
 extra:
   recipe-maintainers:
+    - isuruf
     - stefan-balke
