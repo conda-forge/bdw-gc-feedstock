@@ -24,6 +24,7 @@ requirements:
     - automake
     - libtool
     - pkg-config
+    - make
   host:
     # Uses the static library
     - libatomic_ops
