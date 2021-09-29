@@ -1,6 +1,6 @@
 {% set name = "bdw-gc" %}
-{% set version = "8.0.4" %}
-{% set sha256 = "661d6ed06090982520f92cb88e64bb99ba88f18b33734cc2794b5c7de086d8c1" %}
+{% set version = "8.0.6" %}
+{% set sha256 = "3de0e3d456103a8409927ac16aa45d7b7647dd613e1f212019deab27713445cb" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 
 build:
   number: 0
-  skip: True  # [win]
+  skip: true  # [win]
   run_exports:
     - {{ pin_subpackage('bdw-gc') }}
 
