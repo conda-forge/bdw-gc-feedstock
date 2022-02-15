@@ -1,6 +1,6 @@
 {% set name = "bdw-gc" %}
-{% set version = "8.0.6" %}
-{% set sha256 = "3de0e3d456103a8409927ac16aa45d7b7647dd613e1f212019deab27713445cb" %}
+{% set version = "8.2.0" %}
+{% set sha256 = "c7f03093f72190cf5ed427886006b72ab8ca1f45b509c0cb9c8f97cee497d7d3" %}
 
 package:
   name: {{ name|lower }}
