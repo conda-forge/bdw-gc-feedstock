@@ -1,15 +1,12 @@
-{% set name = "bdw-gc" %}
-{% set version = "8.0.6" %}
-{% set sha256 = "3de0e3d456103a8409927ac16aa45d7b7647dd613e1f212019deab27713445cb" %}
+{% set version = "8.2.8" %}
 
 package:
-  name: {{ name|lower }}
+  name: bdw-gc
   version: {{ version }}
 
 source:
-  fn: gc-{{ version }}.tar.gz
   url: https://github.com/ivmai/bdwgc/archive/v{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: 3de0e3d456103a8409927ac16aa45d7b7647dd613e1f212019deab27713445cb
 
 build:
   number: 0
@@ -20,6 +17,8 @@ build:
 requirements:
   build:
     - {{ compiler('cxx') }}
+    - {{ compiler('c') }}
+    - {{ stdlib('c') }}
     - autoconf
     - automake
     - libtool
@@ -42,5 +41,6 @@ about:
 
 extra:
   recipe-maintainers:
+    - danielnachun
     - isuruf
     - stefan-balke
