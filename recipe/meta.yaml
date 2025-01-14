@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/ivmai/bdwgc/archive/v{{ version }}.tar.gz
-  sha256: 3de0e3d456103a8409927ac16aa45d7b7647dd613e1f212019deab27713445cb
+  sha256: f8f85e2ad675375df37916826c70f80630b7cc4d3ae33c4447a72640641d224f
 
 build:
   number: 0
