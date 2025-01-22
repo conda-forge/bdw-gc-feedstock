@@ -12,6 +12,9 @@ build:
   number: 1
   run_exports:
     - {{ pin_subpackage('bdw-gc') }}
+  ignore_run_exports_from:
+    # uses header-only parts only
+    - libatomic_ops
 
 requirements:
   build:
