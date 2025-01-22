@@ -9,34 +9,39 @@ source:
   sha256: f8f85e2ad675375df37916826c70f80630b7cc4d3ae33c4447a72640641d224f
 
 build:
-  number: 0
-  skip: true  # [win]
+  number: 1
   run_exports:
     - {{ pin_subpackage('bdw-gc') }}
+  ignore_run_exports_from:
+    # uses header-only parts only
+    - libatomic_ops
 
 requirements:
   build:
     - {{ compiler('cxx') }}
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
-    - autoconf
-    - automake
-    - libtool
-    - pkg-config
-    - make
+    - autoconf            # [unix]
+    - automake            # [unix]
+    - libtool             # [unix]
+    - pkg-config          # [unix]
+    - make                # [unix]
+    - cmake               # [win]
+    - ninja               # [win]
   host:
-    # Uses the static library
     - libatomic_ops
 
 test:
   commands:
-    - test -e $PREFIX/include/gc.h
-    - test -e $PREFIX/lib/libgc.so     # [linux]
-    - test -e $PREFIX/lib/libgc.dylib  # [osx]
+    - test -e $PREFIX/include/gc.h              # [unix]
+    - test -e $PREFIX/lib/libgc${SHLIB_EXT}     # [unix]
+    - if not exist %LIBRARY_INC%\gc.h exit 1    # [win]
+    - if not exist %LIBRARY_BIN%\gc.dll exit 1  # [win]
 
 about:
   home: http://www.hboehm.info/gc/
-  license: Custom
+  license: LicenseRef-Bdwgc-Mit-Like
+  license_file: LICENSE
   summary: Garbage collector for C and C++.
 
 extra:
